@@ -3,13 +3,22 @@ package com.epam.java.se;
 import java.util.Arrays;
 
 /**
- * Created by Мария on 01.02.2017.
+ * The class implements the array of longs, that can use every
+ * bit of a long value for storing 1-bit flags. One element of
+ * array can contain 64 flags.
  */
 public class IntSet {
+
+    /** Initial array*/
     private long[] data = new long[1];
 
+    /** Default constructor*/
     public IntSet(){}
 
+    /**
+     * Constructor with parameters
+     * @param data - array of data
+     */
     public IntSet(long [] data)
     {
         this.data = data;
@@ -18,6 +27,19 @@ public class IntSet {
     public long[] getData() {
         return data;
     }
+
+    /**
+     * Method to add values
+     *
+     * @see IntSet#ensureCapacity(int) -
+     * if there is not enough space for storing value
+     * (value>64), capacity of array increases
+     *
+     * @see IntSet#getIndexForBitShift(int) -
+     * method for calculating value of bits needs to be shifted
+     *
+     * @param value - adding int number as index to array
+     */
     public void add (int value) {
         if (value<0) {
             return;
@@ -27,6 +49,11 @@ public class IntSet {
         data[getIndexOfMassive(value)] = newData;
     }
 
+    /**
+     *
+     * @param value - remove from array by int number as index
+     * @throws ArrayIndexOutOfBoundsException if array is empty
+     */
     public void remove(int value) {
         if (value<0) {
             return;
@@ -39,6 +66,13 @@ public class IntSet {
         }
     }
 
+    /**
+     *
+     * @param value - checking if array contains value
+     * @return true if after bit shifting whith & operator
+     * long value !=0
+     * @throws ArrayIndexOutOfBoundsException if array is empty
+     */
     public boolean contains (int value){
         if (value<0) {
             return false;
