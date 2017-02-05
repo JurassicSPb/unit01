@@ -69,7 +69,7 @@ public class IntSet {
     /**
      *
      * @param value - checking if array contains value
-     * @return true if after bit shifting whith & operator
+     * @return true if after bit shifting with AND operation
      * long value !=0
      * @throws ArrayIndexOutOfBoundsException if array is empty
      */
@@ -85,6 +85,16 @@ public class IntSet {
             return false;
         }
     }
+
+    /**
+     * Merge values of two sets in each
+     * iteration with OR operation
+     * In case length of two sets is different,
+     * the set which length is shorter
+     * gains length of longer set
+     * @param newSet - other set
+     * @return result set
+     */
 
     public IntSet union(IntSet newSet) {
         long [] newSetData = newSet.data;
@@ -106,6 +116,15 @@ public class IntSet {
         return new IntSet(resultData);
     }
 
+    /**
+     * Seeks the common values of two sets in each
+     * iteration with AND operation
+     * In case length of two sets is different,
+     * method shortens length that is longer
+     * @param newSet - other set
+     * @return result set
+     */
+
     public IntSet  intersection(IntSet newSet) {
         long [] newSetData = newSet.data;
         int minLength = data.length < newSetData.length ? data.length : newSetData.length;
@@ -125,6 +144,14 @@ public class IntSet {
         }
         return new IntSet(resultData);
     }
+    /**
+     * Seeks different values of two sets in each
+     * iteration with XOR operation
+     * In case length of two sets is different,
+     * method increases length that is shorter
+     * @param newSet - other set
+     * @return result set
+     */
 
     public IntSet difference(IntSet newSet) {
         long [] newSetData = newSet.data;
@@ -146,6 +173,10 @@ public class IntSet {
         return new IntSet(resultData);
     }
 
+    /**
+     * @param newSet - here must be an original set
+     * @return true if set a is subset of set b, false otherwise
+     */
     public boolean isSubsetOf(IntSet newSet) {
         long [] newSetData = newSet.data;
         int maxLength = data.length > newSetData.length ? data.length : newSetData.length;
