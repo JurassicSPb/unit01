@@ -47,13 +47,13 @@ public class MergeSort {
             free = Arrays.copyOf(data, data.length);
 
             int i = startInclusive, j = mid + 1;
-            for (int k = startInclusive; k <= endExclusive; k++)
+            for (int k = startInclusive; k <= endExclusive; k++) {
                 if (i > mid) data[k] = free[j++];
                 else if (j > endExclusive) data[k] = free[i++];
                 else if (free[j] < free[i]) data[k] = free[j++];
                 else data[k] = free[i++];
-
             }
-
         }
+
+}
 
