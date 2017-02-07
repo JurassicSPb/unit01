@@ -36,10 +36,9 @@ public class MergeSort {
             if (length <= 1) {
                 return;
             }
-            for (int sz = 1; sz < length; sz = sz + sz){
-
-                for (int lo = 0; lo < length-sz; lo += sz+sz) {
-                    merger(data, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, length - 1), free);
+            for (int i = 1; i < length; i = i + i){
+                for (int j = 0; j < length-i; j += i+i) {
+                    merger(data, j, j + i - 1, Math.min(j + i + i - 1, length - 1), free);
                 }
             }
         }

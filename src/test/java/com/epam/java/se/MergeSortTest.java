@@ -8,7 +8,7 @@ import org.junit.Test;
 public class MergeSortTest {
     @Test
     public void sort(){
-        int [] data = new int []{10, 5, 7, 1, -5, 1000, Integer.MIN_VALUE};
+        int [] data = new int []{Integer.MAX_VALUE, 10, 5, 7, 1, -5, 1000, Integer.MIN_VALUE, 0};
         MergeSort mergeSort = new MergeSort(data);
         mergeSort.sort();
     }
