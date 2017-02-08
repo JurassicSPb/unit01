@@ -4,7 +4,7 @@ package com.epam.java.se.tasks;
  * Created by Мария on 08.02.2017.
  */
 public class Task4 {
-        public static double findMax(double[] inputArray){
+        public static double findMax (double[] inputArray){
             if (inputArray.length < 2){
                 throw new IllegalArgumentException ("Array is too short");
             }
