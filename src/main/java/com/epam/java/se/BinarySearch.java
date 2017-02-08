@@ -12,7 +12,7 @@ public class BinarySearch {
         if (end < start){
             return  -1;
         }
-        if (target==data[middle]){
+        if (target==data[middle] ){
                 return middle;
         }
         else if (target<data[middle]){
