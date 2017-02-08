@@ -6,7 +6,7 @@ package com.epam.java.se.tasks;
 public class Task5 {
 
     public static int [][] getMatrix(int size){
-        if(size <=0) throw new IllegalArgumentException("size must be > 0");
+        if(size <= 0) throw new IllegalArgumentException("size must be > 0");
 
         int [][] matrix = new int[size][size];
         for (int i=0; i<matrix.length; i++){
