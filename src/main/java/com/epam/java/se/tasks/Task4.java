@@ -14,6 +14,7 @@ public class Task4 {
                     result = inputArray[i] + inputArray[i+1];
                 }
             }
+            System.out.println(result);
             return result;
         }
     }

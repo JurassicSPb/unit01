@@ -6,14 +6,15 @@ package com.epam.java.se.tasks;
 public class Task2 {
     public static double findMin(double epsilon){
         double result = 1.0;
-        int ordNum = 1;
+        int number = 1;
         for (int i = 1; result >= epsilon; i++) {
-            ordNum = i;
+            number = i;
             result = 1 / Math.pow(i + 1, 2);
             System.out.println("a[" + i + "] =" + result);
+
+
         }
-        System.out.println("Порядковый номер минимально возможного элемента последовательности, "
-                + "который меньше " + epsilon + ": " + ordNum);
+        System.out.println("epsilon: " + epsilon + " number: " + number);
         return result;
     }
 

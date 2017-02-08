@@ -8,6 +8,6 @@ import org.junit.Test;
 public class Task2Test {
     @Test
     public void findmin(){
-        Task2.findMin(0.3423423452345345345345);
+        Task2.findMin(0.9);
     }
 }
