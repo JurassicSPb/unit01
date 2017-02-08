@@ -38,7 +38,7 @@ public class MergeSort {
             }
             for (int i = 1; i < length; i = i + i){
                 for (int j = 0; j < length-i; j += i + i) {
-                    merger(data, j, j + i - 1, Math.min(j + i + i - 1, length-1), free);
+                    merger(data, j, j + i - 1, Math.min(j + i + i - 1, length - 1), free);
                 }
             }
         }
