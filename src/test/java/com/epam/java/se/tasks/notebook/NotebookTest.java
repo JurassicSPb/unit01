@@ -13,7 +13,8 @@ public class NotebookTest {
         book.addNote("hey");
         book.addNote("buy");
         book.addNote("qwerty");
-        book.remove(4);
+        book.remove(2);
+        book.editNote(3, "hello");
         book.showAllNotes();
     }
 }

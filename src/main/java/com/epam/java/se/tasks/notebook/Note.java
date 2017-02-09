@@ -1,7 +1,10 @@
 package com.epam.java.se.tasks.notebook;
 
 /**
- * Created by Мария on 09.02.2017.
+ * Class Note which operates with String for
+ * representing single note in Notebook Class
+ *
+ * created by Yuri on 09.02.16
  */
 public class Note {
     private String note;
@@ -12,5 +15,9 @@ public class Note {
 
     public String getNote() {
         return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }
