@@ -34,7 +34,7 @@ public class Notebook {
      * (not index)
      * @param number - position of note, begins with 1
      */
-    public void remove (int number) {
+    public void removeByPosition(int number) {
         if (number<=0 || number>size) {
             throw new ArrayIndexOutOfBoundsException("Wrong number");
         }
@@ -50,8 +50,34 @@ public class Notebook {
 
         size=combined.length;
         notes=combined;
-
     }
+    public void removeByText(String text){
+        int flag=0;
+            for (int i = 0; i < notes.length; i++) {
+                if (notes[i].getNote().equalsIgnoreCase(text)) {
+                    flag++;
+                    Note[] buffer1 = Arrays.copyOf(notes, i);
+
+                    Note[] buffer2 = new Note[size - i - 1];
+                    System.arraycopy(notes, i + 1, buffer2, 0, size - i - 1);
+
+                    Note[] combined = new Note[buffer1.length + buffer2.length];
+
+                    System.arraycopy(buffer1, 0, combined, 0, buffer1.length);
+                    System.arraycopy(buffer2, 0, combined, buffer1.length, buffer2.length);
+
+                    size = combined.length;
+                    notes = combined;
+                }
+            }
+            try {
+                if (flag == 0) {
+                    throw new TextNotFoundException();
+                }
+            } catch (TextNotFoundException e){
+                System.out.println("Text does not exist");
+            }
+        }
 
     /**
      * Changes the content of single note in notebook
@@ -75,6 +101,11 @@ public class Notebook {
         }
         for (int i=0; i<size; i++){
             System.out.println(i+1 + ". " + notes[i].getNote());
+        }
+    }
+    class TextNotFoundException extends Exception{
+        public TextNotFoundException (){
+            super();
         }
     }
 

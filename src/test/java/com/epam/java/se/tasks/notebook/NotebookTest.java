@@ -11,10 +11,13 @@ public class NotebookTest {
         Notebook book = new Notebook();
         book.addNote("hi");
         book.addNote("hey");
+        book.addNote("J");
         book.addNote("buy");
         book.addNote("qwerty");
-        book.remove(2);
-        book.editNote(3, "hello");
+//        book.showAllNotes();
+        book.removeByText("HI");
+//        book.removeByPosition(1);
+//        book.editNote(3, "hello");
         book.showAllNotes();
     }
 }
