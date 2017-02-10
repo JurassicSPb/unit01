@@ -51,6 +51,13 @@ public class Notebook {
         size=combined.length;
         notes=combined;
     }
+
+    /**
+     * Removes single note from notebook by text
+     * @param text - equals text (case ignored) for removal
+     * @throws TextNotFoundException custom exception if text
+     * is not found
+     */
     public void removeByText(String text){
         int flag=0;
             for (int i = 0; i < notes.length; i++) {
