@@ -24,11 +24,26 @@ public class IntArrayListTest {
     }
     @Test
     public void binarySearchRecursive(){
-        int [] data = new int []{-5, Integer.MAX_VALUE, 10, 5, 7, 0, 1, 1, -5, 1000, Integer.MIN_VALUE, -5, 0};
-        Arrays.sort(data);
+        int [] data = new int []{Integer.MIN_VALUE, -15001, -500, -1, 0, 1, 5, 2050, 32000, Integer.MAX_VALUE};
 
         IntArrayList list = new IntArrayList(data);
-        assertEquals(4, list.binarySearchRecursive(0));
 
+        assertEquals(1, list.binarySearchRecursive(-15001));
+        assertEquals(3, list.binarySearchRecursive(-1));
+        assertEquals(-8, list.binarySearchRecursive(500));
+        assertEquals(0, list.binarySearchRecursive(Integer.MAX_VALUE+1));
+        assertEquals(3, list.binarySearchRecursive(-1));
+    }
+    @Test
+    public void binarySearchLoop(){
+        int [] data = new int []{Integer.MIN_VALUE, -15001, -500, -1, 0, 1, 5, 2050, 32000, Integer.MAX_VALUE};
+
+        IntArrayList list = new IntArrayList(data);
+
+        assertEquals(1, list.binarySearchLoop(-15001));
+        assertEquals(6, list.binarySearchLoop(5));
+        assertEquals(-8, list.binarySearchLoop(500));
+        assertEquals(0, list.binarySearchLoop(Integer.MAX_VALUE+1));
+        assertEquals(3, list.binarySearchLoop(-1));
     }
 }
