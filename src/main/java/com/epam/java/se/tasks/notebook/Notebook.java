@@ -56,7 +56,7 @@ public class Notebook {
      * Removes single note from notebook by text
      * @param text - equals text (case ignored) for removal
      * @throws TextNotFoundException custom exception if text
-     * is not found 
+     * is not found
      */
     public void removeByText(String text){
         int flag=0;
