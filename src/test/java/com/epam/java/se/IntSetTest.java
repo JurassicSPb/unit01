@@ -28,6 +28,7 @@ public class IntSetTest {
     @Test
     public void remove() throws Exception {
         final IntSet set = new IntSet();
+        set.add(201);
         set.remove(200);
         assertFalse(set.contains(200));
 

@@ -59,8 +59,10 @@ public class IntSet {
             return;
         }
         try {
-            long newData = data[getIndexOfMassive(value)] ^ (1L << getIndexForBitShift(value));
-            data[getIndexOfMassive(value)] = newData;
+            if (contains(value)) {
+                long newData = data[getIndexOfMassive(value)] ^ (1L << getIndexForBitShift(value));
+                data[getIndexOfMassive(value)] = newData;
+            }
         } catch (ArrayIndexOutOfBoundsException e){
             System.out.println("Array is empty");
         }
@@ -101,12 +103,10 @@ public class IntSet {
         int maxLength = data.length > newSetData.length ? data.length : newSetData.length;
 
         if (newSetData.length<data.length){
-            long [] newSetDataBuffer = Arrays.copyOf(newSetData, maxLength);
-            newSetData = newSetDataBuffer;
+            newSetData = Arrays.copyOf(newSetData, maxLength);
         }
-        else if (data.length<newSetData.length){
-            long [] originalSetDataBuffer = Arrays.copyOf(data, maxLength);
-            data = originalSetDataBuffer;
+        else {
+            data = Arrays.copyOf(data, maxLength);
         }
 
         long [] resultData = new long[maxLength];
@@ -130,12 +130,10 @@ public class IntSet {
         int minLength = data.length < newSetData.length ? data.length : newSetData.length;
 
         if (newSetData.length>data.length){
-            long [] newSetDataBuffer = Arrays.copyOf(newSetData, minLength);
-            newSetData = newSetDataBuffer;
+            newSetData = Arrays.copyOf(newSetData, minLength);
         }
-        else if (data.length>newSetData.length){
-            long [] originalSetDataBuffer = Arrays.copyOf(data, minLength);
-            data = originalSetDataBuffer;
+        else {
+            data = Arrays.copyOf(data, minLength);
         }
 
         long [] resultData = new long[minLength];
@@ -158,12 +156,10 @@ public class IntSet {
         int maxLength = data.length > newSetData.length ? data.length : newSetData.length;
 
         if (newSetData.length<data.length){
-            long [] newSetDataBuffer = Arrays.copyOf(newSetData, maxLength);
-            newSetData = newSetDataBuffer;
+            newSetData = Arrays.copyOf(newSetData, maxLength);
         }
-        else if (data.length<newSetData.length){
-            long [] originalSetDataBuffer = Arrays.copyOf(data, maxLength);
-            data = originalSetDataBuffer;
+        else {
+            data = Arrays.copyOf(data, maxLength);
         }
 
         long [] resultData = new long[maxLength];
@@ -182,12 +178,10 @@ public class IntSet {
         int maxLength = data.length > newSetData.length ? data.length : newSetData.length;
 
         if (newSetData.length<data.length){
-            long [] newSetDataBuffer = Arrays.copyOf(newSetData, maxLength);
-            newSetData = newSetDataBuffer;
+            newSetData = Arrays.copyOf(newSetData, maxLength);
         }
-        else if (data.length<newSetData.length){
-            long [] originalSetDataBuffer = Arrays.copyOf(data, maxLength);
-            data = originalSetDataBuffer;
+        else {
+            data = Arrays.copyOf(data, maxLength);
         }
         long [] bufferData = new long[maxLength];
         long [] resultData = new long[maxLength];

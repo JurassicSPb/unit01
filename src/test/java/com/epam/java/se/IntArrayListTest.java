@@ -15,7 +15,7 @@ public class IntArrayListTest {
         Arrays.sort(copyOfData);
         IntArrayList list = new IntArrayList(data);
         list.sortAscending();
-//        list.sortDescending();
+//      list.sortDescending();
 
         for (int i = 0; i < copyOfData.length; i++) {
             assertEquals(copyOfData[i], list.get(i));
